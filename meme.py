@@ -10,10 +10,12 @@ def get_html(site):
 
 def get_page_data(html):
     soup = BeautifulSoup(html, 'lxml').text
-    divs = soup.find('div', class='main-wrap').find_all('div',class='post-container')
-    aa = divs.find('a').find('img')
+    divs = soup.find('div', class='main-wrap').find_all('a')
     
-    print(aa)
+    for a in divs:
+        td = a.find_all('img')
+    
+        print(td)
 
 
 def main():

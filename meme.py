@@ -9,9 +9,11 @@ def get_html(site):
 
 def get_page_data(html):
     soup = BeautifulSoup(html, 'lxml')
-    line = soup.find('div', class='post-container')
+    line = soup.find('img')
+    
+    for img in line:
  
-    print('line'+line)
+    print(line)
 
 
 def main():

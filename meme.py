@@ -11,8 +11,7 @@ def get_html(site):
 def get_page_data(html):
     soup = BeautifulSoup(html, 'lxml')
     img = soup.find_all('img')
-    src = img.get('src')
-    print(src)
+    print(img['src'])
 
 
 def main():

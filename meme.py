@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from fake_useragent import UserAgent
-UserAgent().chrome
+
 
 
 def get_html(site):
@@ -10,7 +9,7 @@ def get_html(site):
 
 
 def get_page_data(html):
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, 'html.parser')
     line = soup.find_all('h1')
     print(line)
 

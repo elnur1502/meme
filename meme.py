@@ -11,7 +11,7 @@ def get_page_data(html):
     soup = BeautifulSoup(html, 'lxml')
     line = soup.find('div', class='post-container')
  
-    print(line)
+    print('line'+line)
 
 
 def main():

@@ -13,7 +13,7 @@ def get_page_data(html):
     
     for img in line:
  
-    print(line)
+        print(line)
 
 
 def main():

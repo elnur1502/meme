@@ -9,7 +9,7 @@ def get_html(site):
 
 def get_page_data(html):
     soup = BeautifulSoup(html, 'lxml')
-    line = soup.find('div', class='main-wrap').find_all('div', class="post-section")
+    line = soup.find('img')
     print(soup)
 
 

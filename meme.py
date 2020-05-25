@@ -10,7 +10,7 @@ def get_html(site):
 
 def get_page_data(html):
     soup = BeautifulSoup(html, 'html.parser').text
-    line = soup.find_all('picture').text
+    line = soup.find('picture').text
     print line.get('img').text
 
 

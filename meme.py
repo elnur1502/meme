@@ -9,7 +9,7 @@ def get_html(site):
 
 def get_page_data(html):
     soup = BeautifulSoup(html, 'lxml')
-    imgs = soup.find_all(
+    imgs = soup.find_all('img')
 
     for img in imgs:
         print img.get('src')

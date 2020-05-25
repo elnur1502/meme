@@ -13,7 +13,7 @@ def get_page_data(html):
     divs = soup.find('div').find_all('a')
     
     for a in divs:
-        td = a.find_all('img')
+        td = a.find_all('img').text
     
         print(td)
 

@@ -9,9 +9,8 @@ def get_html(site):
 
 def get_page_data(html):
     soup = BeautifulSoup(html)
-    imgs = soup.find('img')
 
-    for img in imgs:
+    for img in soup.find('img'):
         print img.get('src')
 
 

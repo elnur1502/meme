@@ -1,28 +1,6 @@
-Python
-from selenium.webdriver import Firefox
-from selenium.webdriver.firefox.options import Options
-
-opts = Options()
-opts.set_headless()
-assert opts.headless  # без графического интерфейса.
-
-browser = Firefox(options=opts)
-browser.get('https://duckduckgo.com')
-1
-2
-3
-4
-5
-6
-7
-8
-9
-from selenium.webdriver import Firefox
-from selenium.webdriver.firefox.options import Options
+from selenium import webdriver
  
-opts = Options()
-opts.set_headless()
-assert opts.headless  # без графического интерфейса.
+# Указываем полный путь к geckodriver.exe на вашем ПК.
+driver = webdriver.Chrome('C:\Users\elnur\Desktop\chromedriver.exe')
+driver.get("http://www.google.com")
  
-browser = Firefox(options=opts)
-browser.get('https://duckduckgo.com')

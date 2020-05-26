@@ -1,6 +1,9 @@
-from selenium import webdriver
+from selenium.webdriver import Chrome
+from selenium.webdriver.chrome.options import Options
  
-# Указываем полный путь к geckodriver.exe на вашем ПК.
-driver = webdriver.Chrome('C:\Users\elnur\Desktop\chromedriver.exe')
-driver.get("http://www.google.com")
+opts = Options()
+opts.set_headless()
+assert opts.headless  # без графического интерфейса.
  
+browser = Chrome(options=opts)
+browser.get('https://duckduckgo.com')

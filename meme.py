@@ -1,9 +1,23 @@
-from selenium.webdriver import Chrome
-from selenium.webdriver.chrome.options import Options
- 
-opts = Options()
-opts.set_headless()
-assert opts.headless  # без графического интерфейса.
- 
-browser = Chrome(options=opts)
-browser.get('https://duckduckgo.com')
+import requests
+from bs4 import BeautifulSoup
+
+
+def get_html(site):
+    r = requests.get(site)
+    return r.text
+
+
+def get_page_data(html):
+    soup = BeautifulSoup(html, 'lxml')
+
+
+    print(soup)
+
+
+def main():
+    url = 'https://memes.com'
+    get_page_data(get_html(url))
+
+
+if __name__ == '__main__':
+    main()

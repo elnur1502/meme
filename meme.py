@@ -17,7 +17,7 @@ def get_page_data(html):
 
 
 def main():
-    url = 'https://memes.com'
+    url = 'http://1001mem.ru/new'
     get_page_data(get_html(url))
 
 

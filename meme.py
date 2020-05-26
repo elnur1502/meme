@@ -12,6 +12,8 @@ def get_html(site):
     print(key+": "+value)
 
 def get_page_data(html):
+  if item_page is None:
+    return
   soup = BeautifulSoup(html,'html.parser')
   try:
     for img in soup.find_all('img'):

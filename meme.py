@@ -12,7 +12,7 @@ def get_html(site):
     print(key+": "+value)
 
 def get_page_data(html):
-  soup = BeautifulSoup(html_doc)
+  soup = BeautifulSoup(html,'html.parser')
   for img in soup.find_all('img'):
     print img.get('src')  
 

@@ -1,25 +1,13 @@
+import json
 import requests
 from bs4 import BeautifulSoup
 
+url = 'https://www.amazon.com/crocs-Unisex-Classic-Black-Women/dp/B0014C0LSY/ref=sr_1_2?_encoding=UTF8&qid=1560091629&s=fashion-womens-intl-ship&sr=1-2&th=1&psc=1'
 
-def get_html(site):
-    r = requests.get(site)
-    return r.text
-
-
-def get_page_data(html):
-    soup = BeautifulSoup(html, 'lxml')
-    images = soup.find_all('img')
-    print(images['src'])
-
-
-    print(soup)
-
-
-def main():
-    url = 'http://1001mem.ru/new'
-    get_page_data(get_html(url))
-
-
-if __name__ == '__main__':
-    main()
+r = requests.get(url, headers={'User-Agent':'Mozilla/5.0'})
+s = BeautifulSoup(r.text, "lxml")
+img = s.find(id="landingImage")['data-a-dynamic-image']
+img = json.loads(img)
+for k,v in img.items():
+    if '395' in k:
+        print(k)

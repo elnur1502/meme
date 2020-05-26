@@ -1,9 +1,11 @@
-import urllib.request
-# открываем соединение к URL-адресу с помощью urllib2
-webUrl  = urllib.request.urlopen('https://9gag.com/meme')
- 
-# получаем код результата и выводим его
-print ("result code: " + str(webUrl.getcode()))
- 
-# читаем данные с URL-адреса и выводим их data = webUrl.read()
-print (data)
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Firefox()
+driver.get("https://9gag.com/meme")
+assert "Python" in driver.title
+elem = driver.find_element_by_name("q")
+elem.clear()
+elem.send_keys("pycon")
+elem.send_keys(Keys.RETURN)
+assert "No results found." not in driver.page_source
+driver.close()

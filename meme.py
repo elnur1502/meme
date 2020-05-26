@@ -6,8 +6,8 @@ UserAgent().chrome
 page_link = 'https://9gag.com/meme'
 response = requests.get(page_link, headers={'User-Agent': UserAgent().chrome})
 response
-  for key, value in response.request.headers.items():
-    print(key+": "+value)
+for key, value in response.request.headers.items():
+  print(key+": "+value)
 
 
 

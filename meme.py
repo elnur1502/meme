@@ -1,11 +1,28 @@
-from selenium.webdriver.common.keys import Keys
+Python
+from selenium.webdriver import Firefox
+from selenium.webdriver.firefox.options import Options
 
-driver = webdriver.Firefox()
-driver.get("https://9gag.com/meme")
-assert "Python" in driver.title
-elem = driver.find_element_by_name("q")
-elem.clear()
-elem.send_keys("pycon")
-elem.send_keys(Keys.RETURN)
-assert "No results found." not in driver.page_source
-driver.close()
+opts = Options()
+opts.set_headless()
+assert opts.headless  # без графического интерфейса.
+
+browser = Firefox(options=opts)
+browser.get('https://duckduckgo.com')
+1
+2
+3
+4
+5
+6
+7
+8
+9
+from selenium.webdriver import Firefox
+from selenium.webdriver.firefox.options import Options
+ 
+opts = Options()
+opts.set_headless()
+assert opts.headless  # без графического интерфейса.
+ 
+browser = Firefox(options=opts)
+browser.get('https://duckduckgo.com')

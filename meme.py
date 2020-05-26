@@ -12,7 +12,7 @@ def get_html(site):
     print(key+": "+value)
 
 def get_page_data(html):
-  if item_page is None:
+  if html is None:
     return
   soup = BeautifulSoup(html,'html.parser')
   try:

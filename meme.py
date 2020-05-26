@@ -13,9 +13,11 @@ def get_html(site):
 
 def get_page_data(html):
   soup = BeautifulSoup(html,'html.parser')
-  for img in soup.find_all('img'):
-    print img.get('src')  
-
+  try:
+    for img in soup.find_all('img'):
+      print img.get('src')  
+  except:
+    pass
 def main():
     page_link = 'https://9gag.com/meme'
     get_page_data(get_html(page_link))
